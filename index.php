@@ -16,6 +16,7 @@ function getPost($name){
     return $_POST[$name];
 }
 
+//set default data
 if(!isset($_POST['mail_send'])){
     $_POST['from-email'] = 'sender@gmail.com';
     $_POST['from-email-name'] = 'Max Mustermann';
@@ -26,6 +27,10 @@ if(!isset($_POST['mail_send'])){
     $_POST['port'] = '587';
     $_POST['security'] = 'tls';
     $_POST['host'] = 'smtp.google.com';
+    $_POST['subject'] = 'Test Email via SMTP using PHPMailer';
+    $_POST['message_is_html'] = 'yes';
+    $_POST['message'] = "<h1>Send HTML Email using SMTP in PHP</h1>
+                    <p>This is a test email I’m sending using SMTP mail server with PHPMailer.</p>";
 }
 ?>
 <!DOCTYPE html>
@@ -62,10 +67,10 @@ if(!isset($_POST['mail_send'])){
                     $mail->setFrom(getPost('from-email'), getPost('from-email-name'));
                     $mail->addReplyTo(getPost('from-email'), getPost('from-email-name'));
                     $mail->addAddress(getPost('to-email'), getPost('to-email-name')); 
-                    $mail->Subject = 'Test Email via SMTP using PHPMailer';
-                    $mail->isHTML(true);
-                    $mailContent = "<h1>Send HTML Email using SMTP in PHP</h1>
-                    <p>This is a test email I’m sending using SMTP mail server with PHPMailer.</p>";
+                    $mail->Subject = getPost('subject');
+                    $mail->isHTML( getPost('message_is_html') != 'no' );
+                    $mailContent = getPost('message');
+
                     $mail->Body = $mailContent;
 
 
@@ -106,7 +111,7 @@ if(!isset($_POST['mail_send'])){
 
 
                     <div class="input-group-bl mb-3">
-                        <span class="input-placeholder">Port</span>
+                        <span class="input-placeholder">Port (common ports are 25, 465, 587, or 2525)</span>
                         <input type="text" class="form-control" placeholder="Port" name="port" value="<?= getPost('port'); ?>">
                     </div>
 
@@ -138,6 +143,24 @@ if(!isset($_POST['mail_send'])){
                     <div class="input-group-bl mb-3">
                         <span class="input-placeholder">Recipient Name</span>
                         <input type="text" class="form-control" placeholder="Recipient Name" name="to-email-name" value="<?= getPost('to-email-name'); ?>">
+                    </div>
+
+                    <div class="input-group-bl mb-3">
+                        <span class="input-placeholder">Subject</span>
+                        <input type="text" class="form-control" placeholder="Subject" name="subject" value="<?= getPost('subject'); ?>">
+                    </div>
+
+                    <div class="input-group-bl mb-3">
+                        <span class="input-placeholder">Is HTML Message?</span>
+                        <select class="form-select" name="message_is_html">
+                            <option value="yes" <?= getPost('message_is_html') == 'yes'?'selected':''; ?> >YES</option>
+                            <option value="no" <?= getPost('message_is_html') == 'no'?'selected':''; ?>>NO</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group-bl mb-3">
+                        <span class="input-placeholder">Message</span>
+                        <textarea class="form-control" placeholder="Message" name="message"><?= getPost('to-email-name'); ?></textarea>
                     </div>
 
                     <input class="btn btn-sm btn-success" type="submit" name="mail_send" value=" Send Test Email">
