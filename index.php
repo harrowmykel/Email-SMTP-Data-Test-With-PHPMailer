@@ -18,7 +18,9 @@ function getPost($name){
 
 if(!isset($_POST['mail_send'])){
     $_POST['from-email'] = 'sender@gmail.com';
+    $_POST['from-email-name'] = 'Max Mustermann';
     $_POST['to-email'] = 'test@gmail.com';
+    $_POST['to-email-name'] = 'Maria Musterfrau';
     $_POST['username'] = 'user';
     $_POST['password'] = '********';
     $_POST['port'] = '587';
@@ -57,9 +59,9 @@ if(!isset($_POST['mail_send'])){
                     $mail->Password = getPost('password'); 
                     $mail->SMTPSecure = getPost('security');
                     $mail->Port = getPost('port');
-                    $mail->setFrom(getPost('from-email'), 'Sender');
-                    $mail->addReplyTo(getPost('from-email'), 'Sender');
-                    $mail->addAddress(getPost('to-email'), 'Recipient'); 
+                    $mail->setFrom(getPost('from-email'), getPost('from-email-name'));
+                    $mail->addReplyTo(getPost('from-email'), getPost('from-email-name'));
+                    $mail->addAddress(getPost('to-email'), getPost('to-email-name')); 
                     $mail->Subject = 'Test Email via SMTP using PHPMailer';
                     $mail->isHTML(true);
                     $mailContent = "<h1>Send HTML Email using SMTP in PHP</h1>
@@ -123,12 +125,20 @@ if(!isset($_POST['mail_send'])){
                         <input type="text" class="form-control" placeholder="From Email" name="from-email" value="<?= getPost('from-email'); ?>">
                     </div>
 
+                    <div class="input-group-bl mb-3">
+                        <span class="input-placeholder">Sender Name</span>
+                        <input type="text" class="form-control" placeholder="From Email Name" name="from-email-name" value="<?= getPost('from-email-name'); ?>">
+                    </div>
 
                     <div class="input-group-bl mb-3">
                         <span class="input-placeholder">To E-Mail</span>
                         <input type="text" class="form-control" placeholder="To Email" name="to-email" value="<?= getPost('to-email'); ?>">
                     </div>
 
+                    <div class="input-group-bl mb-3">
+                        <span class="input-placeholder">Recipient Name</span>
+                        <input type="text" class="form-control" placeholder="Recipient Name" name="to-email-name" value="<?= getPost('to-email-name'); ?>">
+                    </div>
 
                     <input class="btn btn-sm btn-success" type="submit" name="mail_send" value=" Send Test Email">
                 </form>
