@@ -14,7 +14,7 @@ function getPost($name){
         return '';
     }
     return $_POST[$name];
-}a
+}
 
 if(!isset($_POST['mail_send'])){
     $_POST['from-email'] = 'sender@gmail.com';
