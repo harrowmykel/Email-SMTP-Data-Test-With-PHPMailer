@@ -173,15 +173,13 @@ if(!isset($_POST['mail_send'])){
 
 
     <div class="row">
-        <div class="col-sm-1 col-2"></div>
-        <div class="col-sm-10 col-10 text-center">
+        <div class="col-12 px-2">
             <small>
                2021 &middot; With Love from <a class="text-dark" href="https://aro-micheal.piccmaq.com.ng/">Aro Micheal</a>,
                  <a class="text-dark" href="https://getbootstrap.com/">Bootstrap</a> & 
                   <a class="text-dark" href="https://github.com/PHPMailer/PHPMailer/">PHPMailer</a>
             </small>
         </div>
-        <div class="col-sm-1 col-2"></div>
     </div>
 </body>
 </html>
