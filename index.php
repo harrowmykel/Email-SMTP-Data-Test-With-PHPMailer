@@ -165,7 +165,7 @@ if(!isset($_POST['mail_send'])){
 
                     <div class="input-group-bl mb-3">
                         <span class="input-placeholder">Message</span>
-                        <textarea class="form-control" placeholder="Message" name="message"><?= getPost('message'); ?></textarea>
+                        <textarea class="form-control" style="min-height: 100px;" placeholder="Message" name="message"><?= getPost('message'); ?></textarea>
                     </div>
 
                     <input class="btn btn-sm btn-success" type="submit" name="mail_send" value=" Send Test Email">
