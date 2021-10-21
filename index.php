@@ -169,17 +169,19 @@ if(!isset($_POST['mail_send'])){
             </div>
             <div class="col-md-2 col-12"></div>
         </div>
-    </div>
 
 
-    <div class="row">
-        <div class="col-12 px-2">
-            <small>
-               2021 &middot; With Love from <a class="text-dark" href="https://aro-micheal.piccmaq.com.ng/">Aro Micheal</a>,
-                 <a class="text-dark" href="https://getbootstrap.com/">Bootstrap</a> & 
-                  <a class="text-dark" href="https://github.com/PHPMailer/PHPMailer/">PHPMailer</a>
-            </small>
+        <div class="row mt-4 mb-3">
+            <div class="col-12 px-2 text-center">
+                <small>
+                   2021 &middot; With Love from <a class="text-dark" href="https://aro-micheal.piccmaq.com.ng/">Aro Micheal</a>,
+                     <a class="text-dark" href="https://getbootstrap.com/">Bootstrap</a> & 
+                      <a class="text-dark" href="https://github.com/PHPMailer/PHPMailer/">PHPMailer</a>
+                </small>
+            </div>
         </div>
+
+
     </div>
 </body>
 </html>
