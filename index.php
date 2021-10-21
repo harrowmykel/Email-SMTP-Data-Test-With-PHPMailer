@@ -49,6 +49,11 @@ if(!isset($_POST['mail_send'])){
             <div class="col-md-8 col-12 py-5">
                 <h3>TEST SMTP</h3>
                 <p class="text-muted">Use this to test your SMTP Connection Data</p>
+                <p>
+                    <a href="https://github.com/harrowmykel/Email-SMTP-Data-Test-With-PHPMailer" class="text-muted">
+                       Click here to view the code on Github
+                    </a>
+                </p>
 
 
                 <?php
@@ -174,9 +179,10 @@ if(!isset($_POST['mail_send'])){
         <div class="row mt-4 mb-3">
             <div class="col-12 px-2 text-center">
                 <small>
-                   2021 &middot; With Love from <a class="text-dark" href="https://aro-micheal.piccmaq.com.ng/">Aro Micheal</a>,
+                   2021 &middot; With Love from <a class="text-dark" href="https://aro-micheal.piccmaq.com.ng/">Aro Micheal</a> | Using
                      <a class="text-dark" href="https://getbootstrap.com/">Bootstrap</a> & 
-                      <a class="text-dark" href="https://github.com/PHPMailer/PHPMailer/">PHPMailer</a>
+                      <a class="text-dark" href="https://github.com/PHPMailer/PHPMailer/">PHPMailer</a> &middot; 
+                     <a class="text-primary" href="https://aro-micheal.piccmaq.com.ng/privacy-policy/">Privacy Policy</a>
                 </small>
             </div>
         </div>
