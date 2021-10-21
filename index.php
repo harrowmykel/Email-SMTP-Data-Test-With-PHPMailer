@@ -6,8 +6,6 @@ use PHPMailer\PHPMailer\SMTP;
 require __DIR__.'/phpmailer/src/Exception.php';
 require __DIR__.'/phpmailer/src/PHPMailer.php';
 require __DIR__.'/phpmailer/src/SMTP.php';
-$mail = new PHPMailer();
-$mail->isSMTP();
 
 function getPost($name){
     if(!isset($_POST[$name])){
@@ -56,6 +54,8 @@ if(!isset($_POST['mail_send'])){
                 <?php
 
                 if(isset($_POST['mail_send'])){
+                    $mail = new PHPMailer();
+                    $mail->isSMTP();
                     //remove debug
                     $mail->SMTPDebug = 1;
                     $mail->Host = getPost('host');
