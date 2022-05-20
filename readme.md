@@ -1,5 +1,5 @@
 # Email-SMTP-Data-Test-With-PHPMailer
-Simple SMTP DATA TEST WITH PHP
+This is an open sourced SMTP tester built with PHP that enables you to perform rapid tests on an SMTP Server and configuration in real-time.
 
 
 ## Screenshots
